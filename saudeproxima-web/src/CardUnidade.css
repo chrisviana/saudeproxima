@@ -1,0 +1,51 @@
+h1 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    padding-top: 15px;
+}
+
+.card {
+    height: 250px;
+    background: #FFFEFE;
+    box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.50);
+    border-radius: 10px;
+}
+
+.cardEmergencia {
+    background-color: red;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.cardMuitoUrente {
+    background-color: #F85E08;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.cardUrente {
+    background-color: #F8E008;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.cardPoucoUrente {
+    background-color: #04A330;
+    width: 100px;
+    border-radius: 10px;
+}
+
+
+.cardNaoUrente {
+    background-color: #07C4FF;
+    width: 100px;
+    border-radius: 10px;
+}
+
+
+
+h6 {
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}

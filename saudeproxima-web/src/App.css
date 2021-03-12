@@ -1,0 +1,63 @@
+.fundo2{
+    position: absolute;
+    width: 30%;
+    height: 50%;
+    margin-bottom: 10%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background: #38B7DF;;
+}
+
+.fundo3{
+    position: absolute;
+    width: 30%;
+    height: 60%;
+    margin-bottom: 10%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background: #38B7DF;
+    margin-left: 29%;
+}
+
+.fundo4{
+    position: absolute;
+    width: 30%;
+    height: 50%;
+    margin-bottom: 10%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background: #38B7DF;
+    margin-left: 49%;
+}
+
+.fundo5{
+    position: absolute;
+    width: 30%;
+    height: 63%;
+    margin-bottom: 10%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background: #38B7DF;
+    margin-left: 70%;
+}
+
+.fundo{
+    background: #005466;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.principal{
+    position: absolute;
+}
+
+.logo {
+    margin-left: 65%;
+}
+
+.cardsUnidades{
+    width: 100%;
+    margin-left: 33%;
+    margin-top: 4%;
+}
