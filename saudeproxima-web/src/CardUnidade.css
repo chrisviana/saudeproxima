@@ -5,7 +5,7 @@ h1 {
 }
 
 .card {
-    height: 250px;
+    height: 196px;
     background: #FFFEFE;
     box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.50);
     border-radius: 10px;
@@ -48,4 +48,9 @@ h6 {
     font-weight: bold;
     text-align: center;
     color: #fff;
+}
+
+.totalPacientes {
+    text-align: center;
+    margin-top: 20px;
 }

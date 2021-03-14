@@ -21,6 +21,8 @@ function App() {
           </div>
           <div>
               <div id="cardHospitais" className="cardsUnidades">
+                <CardUnidades></CardUnidades><br></br>
+                <CardUnidades></CardUnidades><br></br>
                 <CardUnidades></CardUnidades>
               </div>
           </div>
