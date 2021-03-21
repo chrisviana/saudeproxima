@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -6,10 +6,11 @@ import Col from 'react-bootstrap/Col'
 import Buttons from './Buttons'
 import './CardUnidade.css';
 
-function CardUnidades() {
+export default class CardUnidades extends Component{
+  render() {
     return (
       <Card>
-        <h1>Buscar nome da Unidade do JSON</h1>
+        <h1>{this.props.nome}</h1>
         <Container fluid="md">
           <Row>
             <Col className="cardEmergencia">
@@ -40,8 +41,7 @@ function CardUnidades() {
           </Row>
         </Container>
       </Card>
-      
-    )
-}
 
-export default CardUnidades;
+    );
+  }
+}

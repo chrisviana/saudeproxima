@@ -1,12 +1,26 @@
-
+  
+import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import logo from './img/logo.png';
 import Container from 'react-bootstrap/Container';
 import CardUnidades from './CardUnidades';
 
+import api from './services/api';
+
 function App() {
 
+  const [unidadesSaude, setUnidadesSaude] = useState([]);
+  
+  async function loadUnidadesSaude() {
+    var unidadesSaude = [];
+    const response = await api.get('unidade-saude', {});
+    setUnidadesSaude([ ...unidadesSaude, ...response.data]);
+  }  
+
+  useEffect(() => {
+    loadUnidadesSaude();
+  }, []);
 
   return (
       <div className="App">
@@ -21,9 +35,7 @@ function App() {
           </div>
           <div>
               <div id="cardHospitais" className="cardsUnidades">
-                <CardUnidades></CardUnidades><br></br>
-                <CardUnidades></CardUnidades><br></br>
-                <CardUnidades></CardUnidades>
+                {unidadesSaude.map(item => <CardUnidades nome={item.nome}></CardUnidades>)}
               </div>
           </div>
         </Container>

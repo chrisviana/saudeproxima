@@ -1,0 +1,20 @@
+{
+    "unidade-saude": [
+        {   
+        "nome": "UPA Próspera",
+        "emergencia": 1,
+        "muitoUrgente": 2,
+        "urgente": 3,
+        "poucoUrgente": 4,
+        "naoUrgente": 3
+        },
+        {   
+            "nome": "UNIMED - Criciúma",
+            "emergencia": 1,
+            "muitoUrgente": 2,
+            "urgente": 3,
+            "poucoUrgente": 4,
+            "naoUrgente": 3
+            }
+    ]
+}

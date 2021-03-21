@@ -1,0 +1,1 @@
+rodar npm run json-db;
