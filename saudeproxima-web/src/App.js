@@ -35,7 +35,7 @@ function App() {
           </div>
           <div>
               <div id="cardHospitais" className="cardsUnidades">
-                {unidadesSaude.map(item => <CardUnidades nome={item.nome}></CardUnidades>)}
+                {unidadesSaude.map(item => <CardUnidades key={item.id} item={item}></CardUnidades>)}
               </div>
           </div>
         </Container>
