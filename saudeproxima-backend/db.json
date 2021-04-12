@@ -2,6 +2,7 @@
   "unidade-saude": [
     {
       "id": 1,
+      "nome": "UPA - Próspera",
       "emergencia": 1,
       "muitoUrgente": 0,
       "urgente": 0,
@@ -11,6 +12,7 @@
     },
     {
       "id": 2,
+      "nome": "UNIMED - Criciúma",
       "emergencia": 16,
       "muitoUrgente": 5,
       "urgente": 4,

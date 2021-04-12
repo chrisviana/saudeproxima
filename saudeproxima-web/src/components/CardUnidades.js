@@ -12,6 +12,7 @@ export default class CardUnidades extends Component {
     super(props);
     this.state = { 
                    id: this.props.item.id,
+                   nome: this.props.item.nome,
                    emergencia: this.props.item.emergencia,
                    muitoUrgente: this.props.item.muitoUrgente, 
                    urgente: this.props.item.urgente, 
