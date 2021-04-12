@@ -16,8 +16,8 @@ export default function Cards() {
 
     const navigation = useNavigation();
 
-    function navigationToDatail(item) {
-        navigation.navigate('Details', { item });
+    function navigationToDatail(unidade) {
+        navigation.navigate('Details', { unidade });
     }
 
     async function loadUnidades() {
@@ -70,7 +70,7 @@ export default function Cards() {
                             style={styles.detailsButton}
                             onPress={() => navigationToDatail(unidade)}>
                             <Text style={styles.detailsButtonText}>Ver mais detalhes</Text>
-                            <Feather name="arrow-right" size={16} color="#E02041" />
+                            <Feather name="arrow-right" size={16} color="#35AEF1" />
                         </TouchableOpacity>
                     </View>
                 )}

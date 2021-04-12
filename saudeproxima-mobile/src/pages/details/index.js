@@ -13,7 +13,7 @@ export default function Cards() {
     const route = useRoute();
 
     const unidade = route.params.unidade;
-    const message = `Olá ${unidade.name}, estou entrando em contato pois gostaria de ajudar no caso "${unidade.title}" com o valor de  ${Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(unidade.value)}.`;
+    const message = `Olá ${unidade.nome}, estou entrando em contato pois gostaria de ajudar no caso com o valor de`;
 
 
     function navigateBack() {
@@ -37,21 +37,22 @@ export default function Cards() {
             <View style={styles.header}>
                 <Image source={logoImg} />
                 <TouchableOpacity onPress={navigateBack}>
-                    <Feather name="arrow-left" size={28} color="#E82041" />
+                    <Feather name="arrow-left" size={28} color="#35AEF1" />
                 </TouchableOpacity>
             </View>
 
-            <View style={styles.unidades}>
-                <Text style={[styles.unidadesProperty], { marginTop: 0 }}>ONG:</Text>
-                <Text style={styles.unidadesValue}>{unidade.name} de {unidade.city}/{unidade.uf}</Text>
+            <View style={styles.cards}>
+                <Text style={styles.cardsProperty}>Icon:</Text>
+                <Text style={styles.cardsValue}>{unidade.nome}</Text>
 
-                <Text style={styles.unidadesProperty}>CASOS:</Text>
-                <Text style={styles.unidadesValue}>{unidade.description}</Text>
+                <Text style={styles.cardsProperty}>Icon:</Text>
+                <Text style={styles.cardsValue}>Tempo médio de espera: xx</Text>
 
-                <Text style={styles.unidadesProperty}>VALOR:</Text>
-                <Text style={styles.unidadesValue}>
-                    {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(unidade.value)}
-                </Text>
+                <Text style={styles.cardsProperty}>Icon:</Text>
+                <Text style={styles.cardsValue}>Total de pessoas na fila: xx</Text>
+
+                <Text style={styles.cardsProperty}>Icon:</Text>
+                <Text style={styles.cardsValue}>Endereco - precisa ser cadastrado: IR</Text>
             </View>
 
             <View style={styles.contactBox}>

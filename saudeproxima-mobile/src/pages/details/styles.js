@@ -14,34 +14,27 @@ export default StyleSheet.create({
         alignItems: 'center'
     },
 
-    incidents: {
+    cards: {
         padding: 24,
         borderRadius: 8,
         backgroundColor: '#FFF',
         marginBottom: 16,
-        marginTop: 48
+        marginTop: 16
     },
 
-    incidentsProperty: {
+    cardsProperty: {
         fontSize: 14,
         color: '#41414d',
-        fontWeight: 'bold',
-        marginTop: 24
+        fontWeight: 'bold'
     },
 
-    incidentsValue: {
+    cardsValue: {
         marginTop: 8,
         fontSize: 15,
+        marginBottom: 24,
         color: '#737380'
     },
-
-    contactBox: {
-        padding: 24,
-        borderRadius: 8,
-        backgroundColor: '#FFF',
-        marginBottom: 16
-    },
-    
+   
     heroTitle: {
         fontWeight: 'bold',
         fontSize: 20,
@@ -62,7 +55,7 @@ export default StyleSheet.create({
     },
     
     action: {
-        backgroundColor: '#e02041',
+        backgroundColor: '#35AEF1',
         borderRadius: 8,
         height: 50,
         width: '48%',
