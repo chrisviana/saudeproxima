@@ -12,8 +12,8 @@ export default function Cards() {
     const navigation = useNavigation();
     const route = useRoute();
 
-    const incident = route.params.incident;
-    const message = `Olá ${incident.name}, estou entrando em contato pois gostaria de ajudar no caso "${incident.title}" com o valor de  ${Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(incident.value)}.`;
+    const unidade = route.params.unidade;
+    const message = `Olá ${unidade.name}, estou entrando em contato pois gostaria de ajudar no caso "${unidade.title}" com o valor de  ${Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(unidade.value)}.`;
 
 
     function navigateBack() {
@@ -22,14 +22,14 @@ export default function Cards() {
 
     function sendEmail() {
         MailComposer.composeAsync({
-            subject: `Herói do caso: ${incident.title}`,
-            recipients: ['lucas.ss@hotmail.com'],
+            subject: `Herói do caso: ${unidade.title}`,
+            recipients: ['lucas@sss.cas'],
             body: message
         })
     }
 
     function sendWhatsapp() {
-        Linking.openURL(`whatsapp://send?phone=${incident.whatsapp}&text=${message}`);
+        Linking.openURL(`whatsapp://send?phone=${unidade.whatsapp}&text=${message}`);
     }
 
     return (
@@ -41,16 +41,16 @@ export default function Cards() {
                 </TouchableOpacity>
             </View>
 
-            <View style={styles.incidents}>
-                <Text style={[styles.incidentsProperty], { marginTop: 0 }}>ONG:</Text>
-                <Text style={styles.incidentsValue}>{incident.name} de {incident.city}/{incident.uf}</Text>
+            <View style={styles.unidades}>
+                <Text style={[styles.unidadesProperty], { marginTop: 0 }}>ONG:</Text>
+                <Text style={styles.unidadesValue}>{unidade.name} de {unidade.city}/{unidade.uf}</Text>
 
-                <Text style={styles.incidentsProperty}>CASOS:</Text>
-                <Text style={styles.incidentsValue}>{incident.description}</Text>
+                <Text style={styles.unidadesProperty}>CASOS:</Text>
+                <Text style={styles.unidadesValue}>{unidade.description}</Text>
 
-                <Text style={styles.incidentsProperty}>VALOR:</Text>
-                <Text style={styles.incidentsValue}>
-                    {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(incident.value)}
+                <Text style={styles.unidadesProperty}>VALOR:</Text>
+                <Text style={styles.unidadesValue}>
+                    {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(unidade.value)}
                 </Text>
             </View>
 
