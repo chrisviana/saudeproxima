@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import logo from './img/logo.png';
 import Container from 'react-bootstrap/Container';
-import CardUnidades from './CardUnidades';
+import CardUnidades from './components/CardUnidades';
 
 import api from './services/api';
 

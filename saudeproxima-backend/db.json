@@ -2,23 +2,21 @@
   "unidade-saude": [
     {
       "id": 1,
-      "nome": "UPA - Próspera",
-      "emergencia": 10,
-      "muitoUrgente": 10,
-      "urgente": 20,
-      "poucoUrgente": 1,
-      "naoUrgente": 1,
-      "total": 42
+      "emergencia": 1,
+      "muitoUrgente": 0,
+      "urgente": 0,
+      "poucoUrgente": 0,
+      "naoUrgente": 0,
+      "total": 1
     },
     {
       "id": 2,
-      "nome": "UNIMED - Criciúma",
-      "emergencia": 5,
+      "emergencia": 16,
       "muitoUrgente": 5,
-      "urgente": 5,
-      "poucoUrgente": 0,
-      "naoUrgente": 0,
-      "total": 15
+      "urgente": 4,
+      "poucoUrgente": 8,
+      "naoUrgente": 4,
+      "total": 37
     }
   ]
 }
