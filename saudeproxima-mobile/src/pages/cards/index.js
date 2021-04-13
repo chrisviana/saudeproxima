@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native'
 import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import logoImg from '../../assets/logo.png';
 
@@ -42,28 +44,30 @@ export default function Cards() {
 
     return (
         <View style={styles.container}>
+            <StatusBar style="dark" />
             <View style={styles.header}>
-                <Image source={logoImg} />
+                <Image 
+                    source={logoImg}
+                    style={{
+                        resizeMode: "contain",
+                        height: 100,
+                        width: 200
+                    }}/>
             </View>
-            <Text style={styles.title}>Bem-vindo!</Text>
-            <Text style={styles.description}>xxxxx</Text>
-
             <FlatList
                 style={styles.cardsList}
                 data={unidades}
                 keyExtractor={unidade => String(unidade.id)}
                 renderItem={({ item: unidade }) => (
                     <View style={styles.cards}>
-                        <Text style={styles.cardsProperty}>Icon:</Text>
+
+                        <Icon name="hospital-o" size={18} color="#999"/>
                         <Text style={styles.cardsValue}>{unidade.nome}</Text>
 
-                        <Text style={styles.cardsProperty}>Icon:</Text>
                         <Text style={styles.cardsValue}>Tempo médio de espera: xx</Text>
 
-                        <Text style={styles.cardsProperty}>Icon:</Text>
                         <Text style={styles.cardsValue}>Total de pessoas na fila: xx</Text>
 
-                        <Text style={styles.cardsProperty}>Icon:</Text>
                         <Text style={styles.cardsValue}>Endereco - precisa ser cadastrado: IR</Text>
 
                         <TouchableOpacity
