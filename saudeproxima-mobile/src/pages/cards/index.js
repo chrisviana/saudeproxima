@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native'
 import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import logoImg from '../../assets/logo.png';
 
@@ -54,16 +55,21 @@ export default function Cards() {
                 keyExtractor={unidade => String(unidade.id)}
                 renderItem={({ item: unidade }) => (
                     <View style={styles.cards}>
-                        <Text style={styles.cardsProperty}>Icon:</Text>
+                      
+                        <Icon name="hospital-o" size={17} color="#2B2B2B" backgroundColor="transparent" />
                         <Text style={styles.cardsValue}>{unidade.nome}</Text>
 
-                        <Text style={styles.cardsProperty}>Icon:</Text>
+                        <Icon name="clock-o" size={17} color="#2B2B2B" backgroundColor="transparent" />
                         <Text style={styles.cardsValue}>Tempo médio de espera: xx</Text>
 
-                        <Text style={styles.cardsProperty}>Icon:</Text>
+                       
+                        <Icon name="arrow-left" size={10} color="#2B2B2B" backgroundColor="transparent" />
+                        <Icon name="arrow-right" size={10} color="#2B2B2B" backgroundColor="transparent" />
+                        
+                        
                         <Text style={styles.cardsValue}>Total de pessoas na fila: xx</Text>
 
-                        <Text style={styles.cardsProperty}>Icon:</Text>
+                        <Icon name="location-arrow" size={17} color="#2B2B2B" backgroundColor="transparent" />
                         <Text style={styles.cardsValue}>Endereco - precisa ser cadastrado: IR</Text>
 
                         <TouchableOpacity
