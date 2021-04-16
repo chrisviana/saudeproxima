@@ -43,12 +43,16 @@ export default function Cards() {
 
     return (
         <View style={styles.container}>
+            <StatusBar style="dark" />
             <View style={styles.header}>
-                <Image source={logoImg} />
+                <Image 
+                    source={logoImg}
+                    style={{
+                        resizeMode: "contain",
+                        height: 100,
+                        width: 200
+                    }}/>
             </View>
-            <Text style={styles.title}>Bem-vindo!</Text>
-            <Text style={styles.description}>xxxxx</Text>
-
             <FlatList
                 style={styles.cardsList}
                 data={unidades}

@@ -5,36 +5,13 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         paddingHorizontal: 24,
-        paddingTop: Constants.statusBarHeight + 20
+        paddingTop: Constants.statusBarHeight + 20,
+        backgroundColor: '#FFF'
     },
 
     header: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         alignItems: 'center'
-    },
-
-    headerText: {
-        fontSize: 15,
-        color: '#737380'
-    },
-
-    headerTextBold: {
-        fontWeight: 'bold'
-    },
-
-    title: {
-        fontSize: 30,
-        marginBottom: 16,
-        marginTop: 48,
-        color: '#13131a',
-        fontWeight: 'bold'
-    },
-
-    description: {
-        fontSize: 16,
-        lineHeight: 24,
-        color: '#737380'
     },
 
     cardsList: {
@@ -44,7 +21,7 @@ export default StyleSheet.create({
     cards: {
         padding: 24,
         borderRadius: 8,
-        backgroundColor: '#FFF',
+        backgroundColor: '#eee',
         marginBottom: 16
     },
 
