@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native'
-import { View, FlatList, Image, Text, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, FlatList, Image, Text, TouchableOpacity, ImageBackground, Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ImagemFundo from '../../assets/fundoAzul.png'
 import logoImg from '../../assets/logoSaudeProxima.png';
@@ -19,6 +19,11 @@ export default function Cards() {
 
     function navigationToDatail(unidade) {
         navigation.navigate('Details', { unidade });
+    }
+
+    function navigationToGoogleMaps(urlGoogleMaps) {
+        
+        Linking.openURL(urlGoogleMaps).catch(err => console.error("Couldn't load page", err));
     }
 
     async function loadUnidades() {
@@ -71,13 +76,15 @@ export default function Cards() {
                                 </View>
                                 
                                 <Text style={styles.cardsValue}>Total de pessoas na fila:</Text>
-                                <Text style={{fontWeight: 'bold', fontSize: 15,  marginLeft: 5}}>50</Text>
+                                <Text style={{fontWeight: 'bold', fontSize: 15,  marginLeft: 5}}>{unidade.total}</Text>
                             </View>
                         
                             <View style={styles.dadosDoCard}>
                                 <Icon name="location-arrow" size={17} color="#2B2B2B" backgroundColor="transparent" />
-                                <Text style={styles.cardsValue}>Avenida Centário, nº 290</Text>
-                                <TouchableOpacity style={styles.btnAbrirMapa}>
+                                <Text style={styles.cardsValue}>{unidade.endereco}</Text>
+                                <TouchableOpacity 
+                                    style={styles.btnAbrirMapa}
+                                    onPress={() => navigationToGoogleMaps(unidade.urlGoogleMaps)}>
                                     <Text style={styles.textAbrirMapa}>IR</Text>
                                 </TouchableOpacity>
                             </View>
