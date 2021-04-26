@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native'
-import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
+import { View, FlatList, Image, Text, TouchableOpacity, ImageBackground } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { StatusBar } from 'expo-status-bar';
-
-import logoImg from '../../assets/logo.png';
+import ImagemFundo from '../../assets/fundoAzul.png'
+import logoImg from '../../assets/logoSaudeProxima.png';
 
 import api from '../../services/api';
 
@@ -44,48 +43,60 @@ export default function Cards() {
 
     return (
         <View style={styles.container}>
-            <StatusBar style="dark" />
-            <View style={styles.header}>
-                <Image 
-                    source={logoImg}
-                    style={{
-                        resizeMode: "contain",
-                        height: 100,
-                        width: 200
-                    }}/>
+            <View style={styles.viewLogo}>
+                <Image source={logoImg} style={styles.logo}/>
             </View>
-            <FlatList
-                style={styles.cardsList}
-                data={unidades}
-                keyExtractor={unidade => String(unidade.id)}
-                renderItem={({ item: unidade }) => (
-                    <View style={styles.cards}>
-                      
-                        <Icon name="hospital-o" size={17} color="#2B2B2B" backgroundColor="transparent" />
-                        <Text style={styles.cardsValue}>{unidade.nome}</Text>
-
-                        <Icon name="clock-o" size={17} color="#2B2B2B" backgroundColor="transparent" />
-                        <Text style={styles.cardsValue}>Tempo médio de espera: xx</Text>
-
-                       
-                        <Icon name="arrow-left" size={10} color="#2B2B2B" backgroundColor="transparent" />
-                        <Icon name="arrow-right" size={10} color="#2B2B2B" backgroundColor="transparent" />
+            <ImageBackground source={ImagemFundo} style={styles.imagemFundo}>
+                <FlatList
+                    style={styles.cardsList}
+                    data={unidades}
+                    keyExtractor={unidade => String(unidade.id)}
+                    renderItem={({ item: unidade }) => (
+                        <View style={styles.cards}>
+                            <View style={styles.dadosDoCard}>
+                                <Icon name="hospital-o" size={15} color="#2B2B2B" backgroundColor="transparent" />
+                                <Text style={{fontWeight: 'bold', fontSize: 15, marginLeft: 10}}>{unidade.nome}</Text>
+                            </View>
                         
+                            <View style={styles.dadosDoCard}>
+                                <Icon name="clock-o" size={15} color="#2B2B2B" backgroundColor="transparent" />
+                                <Text style={styles.cardsValue}>Tempo médio de espera:</Text> 
+                                <Text style={{fontWeight: 'bold', fontSize: 15,  marginLeft: 5, color: "#36A800"}}>20 min</Text>
+                            </View>
+                            
+                            <View  style={styles.dadosDoCard}>
+                                <View>
+                                    <Icon name="arrow-left" size={15} color="#2B2B2B" backgroundColor="transparent" />
+                                    <Icon name="arrow-right" size={15} color="#2B2B2B" backgroundColor="transparent" />
+                                </View>
+                                
+                                <Text style={styles.cardsValue}>Total de pessoas na fila:</Text>
+                                <Text style={{fontWeight: 'bold', fontSize: 15,  marginLeft: 5}}>50</Text>
+                            </View>
                         
-                        <Text style={styles.cardsValue}>Total de pessoas na fila: xx</Text>
-
-                        <Icon name="location-arrow" size={17} color="#2B2B2B" backgroundColor="transparent" />
-                        <Text style={styles.cardsValue}>Endereco - precisa ser cadastrado: IR</Text>
-
-                        <TouchableOpacity
-                            style={styles.detailsButton}
-                            onPress={() => navigationToDatail(unidade)}>
-                            <Text style={styles.detailsButtonText}>Ver mais detalhes</Text>
-                            <Feather name="arrow-right" size={16} color="#35AEF1" />
-                        </TouchableOpacity>
-                    </View>
-                )}
-            />
+                            <View style={styles.dadosDoCard}>
+                                <Icon name="location-arrow" size={17} color="#2B2B2B" backgroundColor="transparent" />
+                                <Text style={styles.cardsValue}>Avenida Centário, nº 290</Text>
+                                <TouchableOpacity style={styles.btnAbrirMapa}>
+                                    <Text style={styles.textAbrirMapa}>IR</Text>
+                                </TouchableOpacity>
+                            </View>
+                            
+                            <View style={styles.viewBtn}>
+                                <TouchableOpacity
+                                    style={styles.detailsButton}
+                                    onPress={() => navigationToDatail(unidade)}>
+                                    <View style={styles.dadosBtn}>
+                                        <Text style={styles.detailsButtonText}>VER MAIS DETALHES</Text>
+                                        <Feather name="arrow-right" size={16} color="#FFF" style={{ marginLeft: 10}}/>
+                                    </View>
+                                </TouchableOpacity>
+                            </View>
+                            
+                        </View>
+                    )}
+                />
+            </ImageBackground>
         </View>
     );
 }

@@ -1,11 +1,12 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import Constants from 'expo-constants';
 
 export default StyleSheet.create({
     container: {
         flex: 1,
-        paddingHorizontal: 24,
-        paddingTop: Constants.statusBarHeight + 20
+        //paddingHorizontal: 24,
+        paddingTop: Constants.statusBarHeight + 20,
+        backgroundColor: "#FFF"
     },
 
     header: {
@@ -14,12 +15,31 @@ export default StyleSheet.create({
         alignItems: 'center'
     },
 
+    logo: {
+        resizeMode: "contain",
+        height: 100,
+        width: 200,
+
+    },
+
+    imagemFundo: {
+        flex:2,
+        resizeMode: 'repeat',
+        width: Dimensions.get('window').width,
+        height: Dimensions.get('window').height
+    },
+
+
     cards: {
-        padding: 24,
+        padding: 20,
         borderRadius: 8,
-        backgroundColor: '#FFF',
+        backgroundColor: '#fff',
+        marginLeft: 20,
+        marginRight: 20,
+        marginTop: 200,
         marginBottom: 16,
-        marginTop: 16
+        flex: 1
+
     },
 
     cardsProperty: {
@@ -29,43 +49,18 @@ export default StyleSheet.create({
     },
 
     cardsValue: {
-        marginTop: 8,
+        marginLeft: 10,
         fontSize: 15,
-        marginBottom: 24,
-        color: '#737380'
+        color: '#7D7D7D'
+
     },
-   
-    heroTitle: {
+
+    nomeUnidade: {
+        fontSize: 22,
         fontWeight: 'bold',
-        fontSize: 20,
-        color: '#13131a',
-        lineHeight: 30
+        color: "#35AEF1"
     },
-
-    heroDescription: {
-        fontSize: 15,
-        color: '#737380',
-        marginTop: 16
-    },
-
-    actions: {
-        marginTop: 16,
-        flexDirection: 'row',
-        justifyContent: 'space-between'
-    },
-    
-    action: {
-        backgroundColor: '#35AEF1',
-        borderRadius: 8,
-        height: 50,
-        width: '48%',
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-
-    actionText: {
-        color: '#FFF',
-        fontSize: 15,
-        fontWeight: 'bold'
+    dadosDoCard: {
+        flexDirection: 'row'
     }
 });
