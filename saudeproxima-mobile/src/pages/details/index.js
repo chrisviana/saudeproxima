@@ -1,9 +1,9 @@
 import React from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native'
-import { View, Image, Text, TouchableOpacity, ImageBackground} from 'react-native';
+import { View, Image, Text, TouchableOpacity, ImageBackground, Linking} from 'react-native';
 import ImagemFundo from '../../assets/fundoAzul.png'
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import logoImg from '../../assets/logoSaudeProxima.png';
 
 import styles from './styles';
@@ -13,13 +13,15 @@ export default function Cards() {
     const route = useRoute();
 
     const unidade = route.params.unidade;
-    const message = `Olá ${unidade.nome}, estou entrando em contato pois gostaria de ajudar no caso com o valor de`;
 
 
     function navigateBack() {
         navigation.goBack();
     }
 
+    function navigationToGoogleMaps(urlGoogleMaps) {
+        Linking.openURL(urlGoogleMaps).catch(err => console.error("Couldn't load page", err));
+    }
 
     return (
         <View style={styles.container}>
@@ -32,14 +34,39 @@ export default function Cards() {
             <ImageBackground source={ImagemFundo} style={styles.imagemFundo}>
                 <View style={styles.cards}>
                     <View style={{ alignItems: 'center', flexDirection: 'column'}}>
-                        <Text style={styles.nomeUnidade}>UPA - PROSPERA</Text>
+                        <Text style={styles.nomeUnidade}>{unidade.nome}</Text>
                     </View>
 
                     <View style={styles.dadosDoCard}>
-                        <Icon name="clock-o" size={15} color="#2B2B2B" backgroundColor="transparent" />
+                        <Icon name="clock" size={15} color="#2B2B2B" backgroundColor="transparent" />
                         <Text style={styles.cardsValue}>Tempo médio total de espera:</Text> 
                         <Text style={{fontWeight: 'bold', fontSize: 15,  marginLeft: 5, color: "#36A800"}}>20 min</Text>
                      </View>
+
+                    <View  style={styles.dadosDoCard}>
+                        <Icon name="transit-transfer" size={15} color="#2B2B2B" backgroundColor="transparent" />   
+                        <Text style={styles.cardsValue}>Total de pessoas na fila:</Text>
+                        <Text style={{fontWeight: 'bold', fontSize: 15,  marginLeft: 5}}>{unidade.total}</Text>
+                    </View>
+
+                    <View style={styles.dadosDoCard}>
+                        <Icon name="google-maps" size={17} color="#2B2B2B" backgroundColor="transparent" />
+                        <Text style={styles.cardsValue}>{unidade.endereco}</Text>
+                        <TouchableOpacity 
+                            style={styles.btnAbrirMapa}
+                            onPress={() => navigationToGoogleMaps(unidade.urlGoogleMaps)}>
+                            <Text style={styles.textAbrirMapa}>IR</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.dadosDoCard}>
+                        <Icon name="phone" size={17} color="#2B2B2B" backgroundColor="transparent" />
+                        <Text style={styles.cardsValue}>{unidade.telefone}</Text>
+                    </View>
+                    <View style={styles.dadosDoCard}>
+                        <Icon name="medical-bag" size={17} color="#2B2B2B" backgroundColor="transparent" />
+                        <Text style={styles.cardsValue}>Médicos de Plantão:</Text>
+                        <Text style={styles.cardsValue}>{unidade.medicosPlantao}</Text>
+                    </View>
                 </View>
 
             </ImageBackground>

@@ -57,7 +57,6 @@ export default StyleSheet.create({
     cardsValue: {
         marginLeft: 10,
         fontSize: 15,
-       // marginBottom: 24,
         color: '#7D7D7D'
     },
 

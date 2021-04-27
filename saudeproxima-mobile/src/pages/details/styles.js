@@ -61,6 +61,23 @@ export default StyleSheet.create({
         color: "#35AEF1"
     },
     dadosDoCard: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 10
+    },
+
+    
+
+    btnAbrirMapa: {
+        backgroundColor: "#0DAC30",
+        width: 30,
+        borderRadius: 20,
+        marginLeft: 10
+    },
+
+    textAbrirMapa:{
+        color: "#FFF",
+        marginLeft: 10,
+        fontWeight: 'bold'
     }
 });
