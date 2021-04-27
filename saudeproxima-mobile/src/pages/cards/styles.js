@@ -60,6 +60,14 @@ export default StyleSheet.create({
         color: '#7D7D7D'
     },
 
+    enderecoValue: {
+        marginLeft: 10,
+        fontSize: 15,
+        textDecorationLine: 'underline',
+        color: '#7D7D7D'
+    },
+
+
     detailsButton: {
         flexDirection: 'row',
         justifyContent: 'space-between',

@@ -22,7 +22,6 @@ export default function Cards() {
     }
 
     function navigationToGoogleMaps(urlGoogleMaps) {
-        
         Linking.openURL(urlGoogleMaps).catch(err => console.error("Couldn't load page", err));
     }
 
@@ -44,6 +43,7 @@ export default function Cards() {
 
     useEffect(() => {
         loadUnidades();
+        setInterval(function(){ loadUnidades(); }, 5000);
     }, []);
 
     return (
@@ -80,12 +80,10 @@ export default function Cards() {
                             </View>
                         
                             <View style={styles.dadosDoCard}>
-                                <Icon name="location-arrow" size={17} color="#2B2B2B" backgroundColor="transparent" />
-                                <Text style={styles.cardsValue}>{unidade.endereco}</Text>
                                 <TouchableOpacity 
-                                    style={styles.btnAbrirMapa}
                                     onPress={() => navigationToGoogleMaps(unidade.urlGoogleMaps)}>
-                                    <Text style={styles.textAbrirMapa}>IR</Text>
+                                    <Icon name="location-arrow" size={17} color="#2B2B2B" backgroundColor="transparent" />
+                                    <Text style={styles.enderecoValue}>{unidade.endereco}</Text>
                                 </TouchableOpacity>
                             </View>
                             
