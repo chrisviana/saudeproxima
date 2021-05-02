@@ -61,8 +61,7 @@ export default StyleSheet.create({
     },
 
     enderecoValue: {
-        marginLeft: 10,
-        fontSize: 15,
+      fontSize: 15,
         textDecorationLine: 'underline',
         color: '#7D7D7D'
     },

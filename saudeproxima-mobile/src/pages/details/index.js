@@ -37,12 +37,6 @@ export default function Cards() {
                         <Text style={styles.nomeUnidade}>{unidade.nome}</Text>
                     </View>
 
-                    <View style={styles.dadosDoCard}>
-                        <Icon name="clock" size={15} color="#2B2B2B" backgroundColor="transparent" />
-                        <Text style={styles.cardsValue}>Tempo médio total de espera:</Text> 
-                        <Text style={{fontWeight: 'bold', fontSize: 15,  marginLeft: 5, color: "#36A800"}}>20 min</Text>
-                     </View>
-
                     <View  style={styles.dadosDoCard}>
                         <Icon name="transit-transfer" size={15} color="#2B2B2B" backgroundColor="transparent" />   
                         <Text style={styles.cardsValue}>Total de pessoas na fila:</Text>
@@ -67,6 +61,19 @@ export default function Cards() {
                         <Text style={styles.cardsValue}>Médicos de Plantão:</Text>
                         <Text style={styles.cardsValue}>{unidade.medicosPlantao}</Text>
                     </View>
+                   <View style={styles.cardPulseiras}>
+                        <Text style={styles.pulseiras}>
+                            Numero de Pacientes por Pulseira 
+                            <Icon name="information" styles={styles.iconInformacao} size={17} color="#2B2B2B" backgroundColor="transparent" />
+                        </Text>
+                    </View>
+                        <View style={styles.categorias}>
+                            <Text style={styles.emergencia} >EMERGÊNCIA: {unidade.emergencia}</Text>
+                            <Text style={styles.muitoUrgente}>MUITO URGENTE: {unidade.muitoUrgente}</Text>
+                            <Text style={styles.urgente}>URGENTE: {unidade.urgente}</Text>
+                            <Text style={styles.poucoUrgente}>POUCO URGENTE: {unidade.poucoUrgente}</Text>
+                            <Text style={styles.naoUrgente}>NÃO URGENTE: {unidade.naoUrgente}</Text>
+                        </View>
                 </View>
 
             </ImageBackground>

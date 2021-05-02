@@ -79,5 +79,51 @@ export default StyleSheet.create({
         color: "#FFF",
         marginLeft: 10,
         fontWeight: 'bold'
+    },
+
+    emergencia: {
+        backgroundColor: "#ff2700",
+        fontWeight: 'bold',
+        paddingLeft: 10
+    },
+    
+    muitoUrgente: {
+        backgroundColor: "#F85E08",
+        fontWeight: 'bold',
+        paddingLeft: 10
+    },
+    
+    urgente: {
+        backgroundColor: "#F8E008",
+        fontWeight: 'bold',
+        paddingLeft: 10
+    },
+    
+    poucoUrgente: {
+        backgroundColor: "#04A330",
+        fontWeight: 'bold',
+        paddingLeft: 10
+    },
+    
+    naoUrgente: {
+        backgroundColor: "#07C4FF",
+        fontWeight: 'bold',
+        paddingLeft: 10
+        
+    },
+    categorias: {
+        marginTop: 10,
+        
+    },
+    pulseiras:{
+        fontSize: 15,
+        fontWeight: 'bold',
+        color: "#35AEF1",
+        flexDirection: 'row'
+        
+    },
+    cardPulseiras:{
+        flexDirection: 'column',
+        alignItems: 'center'
     }
 });
