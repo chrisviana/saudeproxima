@@ -12,7 +12,11 @@
       "endereco": "R. Gen. Osvaldo Pinto da Veiga, 601 - Próspera, Criciúma - SC",
       "telefone": "(48) 3413-5314",
       "urlGoogleMaps": "https://www.google.com/maps/place/UPA+Prospera/@-28.6774375,-49.3513966,17z/data=!4m8!1m2!3m1!2sUPA+Prospera!3m4!1s0x952179901ab86f1b:0x2c781a0d04ea437f!8m2!3d-28.6773927!4d-49.3513483",
-      "medicosPlantao": "3"
+      "medicosPlantao": "3",
+      "coordenadas": {
+        "latitude": -28.6774375,
+        "longitude": -49.3513966
+      }
     },
     {
       "id": 2,
@@ -25,7 +29,11 @@
       "total": 34,
       "endereco": "Av. Estevão Emílio de Souza, 101 - Ceará, Criciúma - SC, 88815-180",
       "telefone": "(48) 3478-2000",
-      "urlGoogleMaps": "https://www.google.com/maps/place/Hospital+Unimed+Crici%C3%BAma/@-28.6861616,-49.3507978,17z/data=!4m8!1m2!3m1!2sHospital+Unimed+Crici%C3%BAma!3m4!1s0x9521788c48fda0c7:0xe6ef4f2ae1f23a1e!8m2!3d-28.6862382!4d-49.3503339"
+      "urlGoogleMaps": "https://www.googl-e.com/maps/place/Hospital+Unimed+Crici%C3%BAma/@-28.6861616,-49.3507978,17z/data=!4m8!1m2!3m1!2sHospital+Unimed+Crici%C3%BAma!3m4!1s0x9521788c48fda0c7:0xe6ef4f2ae1f23a1e!8m2!3d-28.6862382!4d-49.3503339",
+      "coordenadas": {
+        "latitude": -28.6861616,
+        "longitude": -49.3507978
+      }
     }
   ]
 }
