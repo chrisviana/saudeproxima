@@ -61,11 +61,17 @@ export default StyleSheet.create({
     },
 
     enderecoValue: {
-      fontSize: 15,
+        marginLeft: 10,
+        fontSize: 15,
         textDecorationLine: 'underline',
         color: '#7D7D7D'
     },
 
+    values: {
+        fontWeight: 'bold',
+        fontSize: 15, 
+        marginLeft: 5,
+    },
 
     detailsButton: {
         flexDirection: 'row',

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native'
 import { View, FlatList, Image, Text, TouchableOpacity, ImageBackground, Linking } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import IconFA from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ImagemFundo from '../../assets/fundoAzul.png'
 import logoImg from '../../assets/logoSaudeProxima.png';
 
@@ -59,14 +60,8 @@ export default function Cards() {
                     renderItem={({ item: unidade }) => (
                         <View style={styles.cards}>
                             <View style={styles.dadosDoCard}>
-                                <Icon name="hospital-o" size={15} color="#2B2B2B" backgroundColor="transparent" />
-                                <Text style={{fontWeight: 'bold', fontSize: 15, marginLeft: 10}}>{unidade.nome}</Text>
-                            </View>
-                        
-                            <View style={styles.dadosDoCard}>
-                                <Icon name="clock-o" size={15} color="#2B2B2B" backgroundColor="transparent" />
-                                <Text style={styles.cardsValue}>Tempo médio de espera:</Text> 
-                                <Text style={{fontWeight: 'bold', fontSize: 15,  marginLeft: 5, color: "#36A800"}}>20 min</Text>
+                                <IconFA name="hospital-o" size={15} color="#2B2B2B" backgroundColor="transparent" />
+                                <Text style={{fontWeight: 'bold', fontSize: 15, marginLeft: 15}}>{unidade.nome}</Text>
                             </View>
                             
                             <View  style={styles.dadosDoCard}>
@@ -76,14 +71,16 @@ export default function Cards() {
                                 </View>
                                 
                                 <Text style={styles.cardsValue}>Total de pessoas na fila:</Text>
-                                <Text style={{fontWeight: 'bold', fontSize: 15,  marginLeft: 5}}>{unidade.total}</Text>
+                                <Text style={styles.values}>{unidade.total}.</Text>
                             </View>
                         
                             <View style={styles.dadosDoCard}>
+                                <Icon name="google-maps" size={17} color="#2B2B2B" backgroundColor="transparent" />
+                                <Text style={styles.enderecoValue}>{unidade.endereco}</Text>
                                 <TouchableOpacity 
+                                    style={styles.btnAbrirMapa}
                                     onPress={() => navigationToGoogleMaps(unidade.urlGoogleMaps)}>
-                                    <Icon name="location-arrow" size={17} color="#2B2B2B" backgroundColor="transparent" />
-                                    <Text style={styles.enderecoValue}>{unidade.endereco}</Text>
+                                    <Text style={styles.textAbrirMapa}>IR</Text>
                                 </TouchableOpacity>
                             </View>
                             
