@@ -8,13 +8,12 @@ import logoImg from '../../assets/logoSaudeProxima.png';
 
 import styles from './styles';
 
-export default function Cards() {
+export default function Details() {
     const navigation = useNavigation();
     const route = useRoute();
     const [modalVisible, setModalVisible] = useState(false);
 
     const unidade = route.params.unidade;
-
 
     function navigateBack() {
         navigation.goBack();
@@ -39,11 +38,10 @@ export default function Cards() {
                         <Text style={styles.poucoUrgente}>POUCO URGENTE - 120 min - Podem aguardar atendimento ou serem encaminhados para outros serviços de saúde</Text>
                         <Text style={styles.naoUrgente}>NÃO URGENTE - 240 min - Podem aguardar atendimento ou serem encaminhados para outros serviços de saúde</Text>
                     </View>
-                    <br/>
-                    <Pressable style={[styles.button, styles.buttonClose]}
+                    <TouchableOpacity style={[styles.button, styles.buttonClose]}
                         onPress={() => setModalVisible(!modalVisible)}>
                         <Text style={styles.textStyle}>Fechar</Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
             </Modal>
             <View style={styles.header}>
@@ -83,11 +81,11 @@ export default function Cards() {
                         <Text style={styles.cardsValue}>{unidade.medicosPlantao}</Text>
                     </View>
                    <View style={styles.cardPulseiras}>
+                   <TouchableOpacity onPress={() => setModalVisible(true)}>
+                                <Icon name="information" styles={styles.iconInformacao} size={17} color="#2B2B2B" backgroundColor="transparent" />
+                            </TouchableOpacity>
                         <Text style={styles.pulseiras}>
                             Numero de Pacientes por Pulseira 
-                            <Pressable onPress={() => setModalVisible(true)}>
-                            <Icon name="information" styles={styles.iconInformacao} size={17} color="#2B2B2B" backgroundColor="transparent" />
-                            </Pressable>
                         </Text>
                     </View>
                         <View style={styles.categorias}>

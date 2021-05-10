@@ -44,7 +44,7 @@ export default function Cards() {
 
     useEffect(() => {
         loadUnidades();
-        setInterval(function(){ loadUnidades(); }, 5000);
+        setInterval(function(){ loadUnidades(); }, 10000);
     }, []);
 
     return (
