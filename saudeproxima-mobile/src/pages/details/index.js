@@ -1,19 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native'
-import { View, Image, Text, TouchableOpacity, ImageBackground, Linking} from 'react-native';
+import { View, Image, Text, TouchableOpacity, ImageBackground, Linking, Modal, Pressable} from 'react-native';
 import ImagemFundo from '../../assets/fundoAzul.png'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import logoImg from '../../assets/logoSaudeProxima.png';
 
 import styles from './styles';
 
-export default function Cards() {
+export default function Details() {
     const navigation = useNavigation();
     const route = useRoute();
+    const [modalVisible, setModalVisible] = useState(false);
 
     const unidade = route.params.unidade;
-
 
     function navigateBack() {
         navigation.goBack();
@@ -25,6 +25,25 @@ export default function Cards() {
 
     return (
         <View style={styles.container}>
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => { setModalVisible(!modalVisible);}}>
+                <View style={styles.modalView}>
+                    <View style={styles.categorias}>
+                        <Text style={styles.emergencia} >EMERGÊNCIA - 0 min - Necessitam de atendimento imediato</Text>
+                        <Text style={styles.muitoUrgente}>MUITO URGENTE - 10 min - Necessitam de atendimento praticamente imadiato</Text>
+                        <Text style={styles.urgente}>URGENTE - 50 min - Necessitam de atendimento rápido, mas podem aguardar</Text>
+                        <Text style={styles.poucoUrgente}>POUCO URGENTE - 120 min - Podem aguardar atendimento ou serem encaminhados para outros serviços de saúde</Text>
+                        <Text style={styles.naoUrgente}>NÃO URGENTE - 240 min - Podem aguardar atendimento ou serem encaminhados para outros serviços de saúde</Text>
+                    </View>
+                    <TouchableOpacity style={[styles.button, styles.buttonClose]}
+                        onPress={() => setModalVisible(!modalVisible)}>
+                        <Text style={styles.textStyle}>Fechar</Text>
+                    </TouchableOpacity>
+                </View>
+            </Modal>
             <View style={styles.header}>
                 <Image source={logoImg} style={styles.logo}/>
                 <TouchableOpacity onPress={navigateBack}>
@@ -45,7 +64,7 @@ export default function Cards() {
 
                     <View style={styles.dadosDoCard}>
                         <Icon name="google-maps" size={17} color="#2B2B2B" backgroundColor="transparent" />
-                        <Text style={styles.cardsValue}>{unidade.endereco}</Text>
+                        <Text style={styles.enderecoValue}>{unidade.endereco}</Text>
                         <TouchableOpacity 
                             style={styles.btnAbrirMapa}
                             onPress={() => navigationToGoogleMaps(unidade.urlGoogleMaps)}>
@@ -62,9 +81,11 @@ export default function Cards() {
                         <Text style={styles.cardsValue}>{unidade.medicosPlantao}</Text>
                     </View>
                    <View style={styles.cardPulseiras}>
+                   <TouchableOpacity onPress={() => setModalVisible(true)}>
+                                <Icon name="information" styles={styles.iconInformacao} size={17} color="#2B2B2B" backgroundColor="transparent" />
+                            </TouchableOpacity>
                         <Text style={styles.pulseiras}>
                             Numero de Pacientes por Pulseira 
-                            <Icon name="information" styles={styles.iconInformacao} size={17} color="#2B2B2B" backgroundColor="transparent" />
                         </Text>
                     </View>
                         <View style={styles.categorias}>

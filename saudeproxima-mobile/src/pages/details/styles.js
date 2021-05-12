@@ -29,7 +29,6 @@ export default StyleSheet.create({
         height: Dimensions.get('window').height
     },
 
-
     cards: {
         padding: 20,
         borderRadius: 8,
@@ -60,13 +59,12 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         color: "#35AEF1"
     },
+
     dadosDoCard: {
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 10
     },
-
-    
 
     btnAbrirMapa: {
         backgroundColor: "#0DAC30",
@@ -111,10 +109,12 @@ export default StyleSheet.create({
         paddingLeft: 10
         
     },
+
     categorias: {
         marginTop: 10,
         
     },
+
     pulseiras:{
         fontSize: 15,
         fontWeight: 'bold',
@@ -122,8 +122,56 @@ export default StyleSheet.create({
         flexDirection: 'row'
         
     },
+
     cardPulseiras:{
         flexDirection: 'column',
         alignItems: 'center'
-    }
+    },
+
+    enderecoValue: {
+        marginLeft: 10,
+        fontSize: 15,
+        textDecorationLine: 'underline',
+        color: '#7D7D7D'
+    },
+
+    modalView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22,
+        margin: 20,
+        backgroundColor: "white",
+        borderRadius: 10,
+        padding: 35,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+        elevation: 24,
+      },
+      button: {
+        borderRadius: 10,
+        padding: 10,
+        elevation: 2
+      },
+      buttonOpen: {
+        backgroundColor: "#F194FF",
+      },
+      buttonClose: {
+        backgroundColor: "#66C6E4",
+      },
+      textStyle: {
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center"
+      },
+      modalText: {
+        marginBottom: 15,
+        textAlign: "center"
+      }
 });
