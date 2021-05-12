@@ -5,6 +5,8 @@ import { View, FlatList, Image, Text, TouchableOpacity, ImageBackground, Linking
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ImagemFundo from '../../assets/fundoAzul.png'
 import logoImg from '../../assets/logoSaudeProxima.png';
+import { getDistance } from 'geolib';
+import * as Location from "expo-location";
 
 import api from '../../services/api';
 
@@ -33,8 +35,23 @@ export default function Cards() {
             return;
         }
         setLoading(true);
-        
+
+        let location = await Location.getCurrentPositionAsync({
+            enableHighAccuracy: true,
+        });
+
         const response = await api.get('unidade-saude', {});
+
+        response.data.forEach(unidade => {
+            unidade.distance = getDistance(
+                {latitude: location.coords.latitude, longitude: location.coords.longitude},
+                {latitude: unidade.coordenadas.latitude, longitude: unidade.coordenadas.longitude},
+            );
+        });
+
+        response.data.sort((a, b) => {
+            return (a.distance > b.distance) ? 1 : -1
+        });
 
         setUnidades([ ... unidades, ... response.data]);
         setTotal(response.data.length);
