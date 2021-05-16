@@ -88,7 +88,12 @@ export default function Cards() {
                                 </View>
                                 
                                 <Text style={styles.cardsValue}>Total de pessoas na fila:</Text>
-                                <Text style={styles.values}>{unidade.total}.</Text>
+                                <Text style={styles.values}>{unidade.total}</Text>
+                            </View>
+                            
+                            <View style={styles.dadosDoCard}>
+                                <Text style={styles.cardsValue}>Distância:</Text>
+                                <Text style={styles.values}>{(unidade.distance / 1000).toFixed(1).toString().replace(/\./g, ',')} km</Text>
                             </View>
                         
                             <View style={styles.dadosDoCard}>
