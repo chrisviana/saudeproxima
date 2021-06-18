@@ -22,7 +22,8 @@ export default class CardUnidades extends Component {
                    endereco: this.props.item.endereco,
                    telefone: this.props.item.telefone,
                    urlGoogleMaps: this.props.item.urlGoogleMaps,
-                   medicosPlantao: this.props.item.medicosPlantao
+                   medicosPlantao: this.props.item.medicosPlantao,
+                   coordenadas: this.props.item.coordenadas
                   };
     this.incrementar = this.incrementar.bind(this);
     this.decrementar = this.decrementar.bind(this);
