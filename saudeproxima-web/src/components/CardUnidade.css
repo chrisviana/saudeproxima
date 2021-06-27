@@ -5,7 +5,7 @@ h1 {
 }
 
 .card {
-    height: 196px;
+    height: 225px;
     background: #FFFEFE;
     box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.50);
     border-radius: 10px;
@@ -13,30 +13,41 @@ h1 {
 }
 
 .cardLabel {
-    width: 100px;
     border-radius: 10px;
     margin: 2px;
     text-shadow: 1px 1px 2px black;
+    padding: 10px;
 }
 
 .cardEmergencia {
     background-color: red;
+    height: 45px;
+width: 185px;
+
 }
 
 .cardMuitoUrgente {
+    height: 45px;
+width: 185px;
     background-color: #F85E08;
 }
 
 .cardUrgente {
+    height: 45px;
+width: 185px;
     background-color: #F8E008;
 }
 
 .cardPoucoUrgente {
+    height: 45px;
+width: 185px;
     background-color: #04A330;
 }
 
 
 .cardNaoUrgente {
+    height: 45px;
+width: 185px;
     background-color: #07C4FF;
 }
 
@@ -49,6 +60,10 @@ h6 {
 .totalPacientes {
     text-align: center;
     margin-top: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
 }
 
 .divButtons{
@@ -59,6 +74,7 @@ h6 {
 
 h5 {
     font-weight: bold;
+    padding: 0 15px;
 }
 
 .btn {
@@ -66,4 +82,21 @@ h5 {
     font-size: 20px;
     padding: 0px;
     width: 39px;
+}
+
+.cardTipoDePuleiras{
+    display: flex;
+    justify-content: center;
+}
+
+.linhaBotao{
+    display: flex;
+    justify-content: space-around;
+}
+
+.botaoIncrementDecrementar{
+    display: flex;
+    width: 135px;
+    flex: 1;
+    justify-content: center;
 }

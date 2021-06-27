@@ -65,105 +65,53 @@ export default class CardUnidades extends Component {
       return (
       <Card>
         <h1>{this.props.item.nome}</h1>
-        <Container fluid="md">
-          <Row>
-            <Col className="cardEmergencia cardLabel">
+        <div className="cardTipoDePuleiras">
+            <div className="cardEmergencia cardLabel">
               <h6>EMERGÊNCIA</h6>
-            </Col>
-            <Col className="cardMuitoUrgente cardLabel">
+            </div>
+            <div className="cardMuitoUrgente cardLabel">
               <h6>MUITO URGENTE</h6>
-            </Col>
-            <Col className="cardUrgente cardLabel">
+            </div>
+            <div className="cardUrgente cardLabel">
               <h6>URGENTE</h6>
-            </Col>
-            <Col className="cardPoucoUrgente cardLabel">
+            </div>
+            <div className="cardPoucoUrgente cardLabel">
               <h6>POUCO URGENTE</h6>
-            </Col>
-            <Col className="cardNaoUrgente cardLabel">
+            </div>
+            <div className="cardNaoUrgente cardLabel">
               <h6>NÃO URGENTE</h6>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Container>
-                <Row>
-                    <div className="divButtons">
-                    <Col>
-                        <Button variant="danger" onClick={() => this.decrementar('emergencia')}>-</Button>
-                    </Col>
-                    <Col><h5>{this.state.emergencia}</h5></Col>
-                    <Col>
-                      <Button variant="success" onClick={() => this.incrementar('emergencia')}>+</Button>
-                    </Col>
-                    </div>
-                </Row>
-              </Container>
-            </Col>
-            <Col>
-              <Container>
-                <Row>
-                    <div className="divButtons">
-                    <Col>
-                        <Button variant="danger" onClick={() => this.decrementar('muitoUrgente')}>-</Button>
-                    </Col>
-                    <Col><h5>{this.state.muitoUrgente}</h5></Col>
-                    <Col>
-                      <Button variant="success" onClick={() => this.incrementar('muitoUrgente')}>+</Button>
-                    </Col>
-                    </div>
-                </Row>
-              </Container>
-            </Col>
-            <Col>
-              <Container>
-                <Row>
-                    <div className="divButtons">
-                    <Col>
-                        <Button variant="danger" onClick={() => this.decrementar('urgente')}>-</Button>
-                    </Col>
-                    <Col><h5>{this.state.urgente}</h5></Col>
-                    <Col>
-                      <Button variant="success" onClick={() => this.incrementar('urgente')}>+</Button>
-                    </Col>
-                    </div>
-                </Row>
-              </Container>
-            </Col>
-            <Col>
-              <Container>
-                <Row>
-                    <div className="divButtons">
-                    <Col>
-                        <Button variant="danger" onClick={() => this.decrementar('poucoUrgente')}>-</Button>
-                    </Col>
-                    <Col><h5>{this.state.poucoUrgente}</h5></Col>
-                    <Col>
-                      <Button variant="success" onClick={() => this.incrementar('poucoUrgente')}>+</Button>
-                    </Col>
-                    </div>
-                </Row>
-              </Container>
-            </Col>
-            <Col>
-              <Container>
-                <Row>
-                    <div className="divButtons">
-                    <Col>
-                        <Button variant="danger" onClick={() => this.decrementar('naoUrgente')}>-</Button>
-                    </Col>
-                    <Col><h5>{this.state.naoUrgente}</h5></Col>
-                    <Col>
-                      <Button variant="success" onClick={() => this.incrementar('naoUrgente')}>+</Button>
-                    </Col>
-                    </div>
-                </Row>
-              </Container>
-            </Col>
-          </Row>
-          <Row>
-            <Col className="totalPacientes"> <h5>Nº Total de Pacientes: {this.state.total}</h5></Col>
-          </Row>
-        </Container>
+            </div>
+        </div>
+        <div className="linhaBotao">
+          <div className="botaoIncrementDecrementar">
+            <Button variant="danger" onClick={() => this.decrementar('emergencia')}>-</Button>
+            <h5>{this.state.emergencia}</h5>
+            <Button variant="success" onClick={() => this.incrementar('emergencia')}>+</Button>
+          </div>
+          <div className="botaoIncrementDecrementar">
+            <Button variant="danger" onClick={() => this.decrementar('muitoUrgente')}>-</Button>
+            <h5>{this.state.muitoUrgente}</h5>
+            <Button variant="success" onClick={() => this.incrementar('muitoUrgente')}>+</Button>
+          </div>
+          <div className="botaoIncrementDecrementar">
+            <Button variant="danger" onClick={() => this.decrementar('urgente')}>-</Button>
+            <h5>{this.state.urgente}</h5>
+            <Button variant="success" onClick={() => this.incrementar('urgente')}>+</Button>
+          </div>
+          <div className="botaoIncrementDecrementar">
+            <Button variant="danger" onClick={() => this.decrementar('poucoUrgente')}>-</Button>
+            <h5>{this.state.poucoUrgente}</h5>
+            <Button variant="success" onClick={() => this.incrementar('poucoUrgente')}>+</Button>
+          </div>
+          <div className="botaoIncrementDecrementar">
+            <Button variant="danger" onClick={() => this.decrementar('naoUrgente')}>-</Button>
+            <h5>{this.state.naoUrgente}</h5>
+            <Button variant="success" onClick={() => this.incrementar('naoUrgente')}>+</Button>
+          </div>
+        </div>
+        <div className="totalPacientes">
+          <h5>Nº Total de Pacientes: {this.state.total}</h5>
+        </div>
       </Card>
 
     );

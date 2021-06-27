@@ -48,16 +48,11 @@
     height: 100%;
 }
 
-.principal{
-    position: absolute;
-}
-
 .logo {
     margin-left: 65%;
 }
 
 .cardsUnidades{
     width: 100%;
-    margin-left: 33%;
     margin-top: 4%;
 }
